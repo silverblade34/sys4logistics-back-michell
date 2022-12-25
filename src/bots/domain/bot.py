@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter   
 from src.bots.infrastructure.controller import BotsController
 from validations.validators import hasErrorMsg, parsedRespondData, parsedRespond
 
@@ -15,4 +15,5 @@ async def setDataParsed():
         return result
     except Exception as err:
         return hasErrorMsg(err)
+
 

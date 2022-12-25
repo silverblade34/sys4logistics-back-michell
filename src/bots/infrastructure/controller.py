@@ -9,5 +9,6 @@ class BotsController():
 
     def controllerBotsPlaca(self):
         bots = self.mysql.statusBots()
+        print(bots)
         list = self.responseData.parsedRespondBot(bots)
         return list

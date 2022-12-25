@@ -12,6 +12,7 @@ class ResponseBot():
         data = {"name": name,"flag":1}
         dataJson = json.dumps(data)
         response = requests.post('http://67.207.87.64:8000/api/v1/bot/data',dataJson)
+        print(response)
         raw = response.json()
         result = raw['data'][-1]['nm']
         placa = result[0:6]
@@ -25,7 +26,7 @@ class ResponseBot():
         ListBots = []
         for bot in bots:
            dicBot = {}
-           placa = self.parsedResponsePlaca(bot[0])
+           placa = self.parsedResponsePlaca(bot[0])        
            dicBot['name']=bot[0]
            dicBot['status']=bool(bot[1])
            dicBot['lateplate'] = placa

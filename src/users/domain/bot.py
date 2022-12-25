@@ -5,10 +5,10 @@ from validations.validators import hasErrorMsg, parsedRespond, checkArgs
 import requests
 
 
-bot = APIRouter()
+user = APIRouter()
 
 #MOSTRAR DATOS
-@bot.get("/api/v1/login")
+@user.get("/api/v1/login")
 async def setUserParsed(user: str, pasw: str):
     try:
         _userCL = UserController()  
@@ -16,4 +16,7 @@ async def setUserParsed(user: str, pasw: str):
         return parsedRespond(raw)
     except Exception as err:
         return hasErrorMsg(err)
+
+
+
     
